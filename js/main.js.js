@@ -1,7 +1,33 @@
 /**
- * NovaCare Clinic - Main JavaScript
- * Handles navigation, form validation, and animations
+ * NovaCare Clinic - Enhanced JavaScript
+ * Subtle, professional interactions for improved UX
  */
+
+// ===== ALERT BANNER MANAGEMENT =====
+const initAlertBanner = () => {
+    const banner = document.getElementById('alertBanner');
+    const closeBtn = document.getElementById('alertClose');
+    
+    if (!banner || !closeBtn) return;
+    
+    // Check if user has previously dismissed the alert
+    const isDismissed = sessionStorage.getItem('alertDismissed');
+    
+    if (isDismissed) {
+        banner.classList.add('hidden');
+    }
+    
+    // Handle close button click
+    closeBtn.addEventListener('click', () => {
+        banner.style.opacity = '0';
+        banner.style.transform = 'translateY(-100%)';
+        
+        setTimeout(() => {
+            banner.classList.add('hidden');
+            sessionStorage.setItem('alertDismissed', 'true');
+        }, 300);
+    });
+};
 
 // ===== MOBILE NAVIGATION =====
 const initMobileNav = () => {
@@ -14,6 +40,18 @@ const initMobileNav = () => {
     toggle.addEventListener('click', () => {
         nav.classList.toggle('active');
         toggle.setAttribute('aria-expanded', nav.classList.contains('active'));
+        
+        // Animate hamburger icon
+        const spans = toggle.querySelectorAll('span');
+        if (nav.classList.contains('active')) {
+            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+        } else {
+            spans[0].style.transform = '';
+            spans[1].style.opacity = '';
+            spans[2].style.transform = '';
+        }
     });
     
     // Close menu when clicking nav link
@@ -22,6 +60,12 @@ const initMobileNav = () => {
         link.addEventListener('click', () => {
             nav.classList.remove('active');
             toggle.setAttribute('aria-expanded', 'false');
+            
+            // Reset hamburger icon
+            const spans = toggle.querySelectorAll('span');
+            spans[0].style.transform = '';
+            spans[1].style.opacity = '';
+            spans[2].style.transform = '';
         });
     });
     
@@ -42,7 +86,7 @@ const initMobileNav = () => {
     });
 };
 
-// ===== SCROLL ANIMATIONS =====
+// ===== SCROLL ANIMATIONS (INTERSECTION OBSERVER) =====
 const initScrollAnimations = () => {
     const observerOptions = {
         threshold: 0.1,
@@ -53,13 +97,17 @@ const initScrollAnimations = () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                // Optionally unobserve after animation
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
     
-    // Observe all elements with fade-in class
-    const fadeElements = document.querySelectorAll('.fade-in');
-    fadeElements.forEach(el => observer.observe(el));
+    // Observe all elements with animate-on-scroll class
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    animatedElements.forEach(el => {
+        observer.observe(el);
+    });
 };
 
 // ===== FORM VALIDATION =====
@@ -105,6 +153,12 @@ const initFormValidation = () => {
             errorElement.textContent = message;
             errorElement.classList.add('show');
             field.classList.add('error');
+            
+            // Add shake animation
+            field.style.animation = 'shake 0.3s ease';
+            setTimeout(() => {
+                field.style.animation = '';
+            }, 300);
         }
     };
     
@@ -186,9 +240,17 @@ const initFormValidation = () => {
         isValid = validateField('consent', formData.consent, true) && isValid;
         
         if (isValid) {
-            // Show success message
+            // Show success message with animation
             if (successMessage) {
+                successMessage.style.opacity = '0';
                 successMessage.classList.add('show');
+                
+                // Fade in animation
+                setTimeout(() => {
+                    successMessage.style.transition = 'opacity 0.5s ease';
+                    successMessage.style.opacity = '1';
+                }, 10);
+                
                 successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
             
@@ -198,7 +260,10 @@ const initFormValidation = () => {
             // Hide success message after 8 seconds
             setTimeout(() => {
                 if (successMessage) {
-                    successMessage.classList.remove('show');
+                    successMessage.style.opacity = '0';
+                    setTimeout(() => {
+                        successMessage.classList.remove('show');
+                    }, 500);
                 }
             }, 8000);
         } else {
@@ -251,8 +316,9 @@ const initHeaderScroll = () => {
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
         
+        // Add shadow when scrolled
         if (currentScroll > 100) {
-            header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+            header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
         } else {
             header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.08)';
         }
@@ -261,7 +327,7 @@ const initHeaderScroll = () => {
     });
 };
 
-// ===== SET MINIMUM DATE FOR APPOINTMENT FORM =====
+// ===== DATE CONSTRAINTS FOR APPOINTMENT FORM =====
 const initDateConstraints = () => {
     const dateInput = document.getElementById('datePreference');
     if (!dateInput) return;
@@ -305,11 +371,85 @@ const initActiveNav = () => {
     });
 };
 
+// ===== CARD HOVER ENHANCEMENT (SUBTLE MICRO-INTERACTION) =====
+const initCardInteractions = () => {
+    const cards = document.querySelectorAll('.card-interactive');
+    
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transition = 'all 0.3s ease';
+        });
+    });
+};
+
+// ===== FAQ ACCORDION (IF PRESENT) =====
+const initFaqAccordion = () => {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const isActive = question.classList.contains('active');
+            
+            // Close all other FAQ items
+            faqQuestions.forEach(q => {
+                q.classList.remove('active');
+                q.nextElementSibling.style.maxHeight = null;
+            });
+            
+            // Toggle current FAQ item
+            if (!isActive) {
+                question.classList.add('active');
+                const answer = question.nextElementSibling;
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        });
+    });
+};
+
+// ===== ACCESSIBILITY: FOCUS VISIBLE =====
+const initAccessibility = () => {
+    // Add keyboard focus indicators
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Tab') {
+            document.body.classList.add('keyboard-nav');
+        }
+    });
+    
+    document.addEventListener('mousedown', () => {
+        document.body.classList.remove('keyboard-nav');
+    });
+};
+
+// ===== PERFORMANCE: LAZY LOAD IMAGES (IF ADDED LATER) =====
+const initLazyLoading = () => {
+    if ('IntersectionObserver' in window) {
+        const images = document.querySelectorAll('img[data-src]');
+        
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        images.forEach(img => imageObserver.observe(img));
+    }
+};
+
 // ===== INITIALIZE ALL FEATURES =====
 const init = () => {
     // Wait for DOM to be fully loaded
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
+            initAlertBanner();
             initMobileNav();
             initScrollAnimations();
             initFormValidation();
@@ -317,9 +457,14 @@ const init = () => {
             initHeaderScroll();
             initDateConstraints();
             initActiveNav();
+            initCardInteractions();
+            initFaqAccordion();
+            initAccessibility();
+            initLazyLoading();
         });
     } else {
         // DOM is already loaded
+        initAlertBanner();
         initMobileNav();
         initScrollAnimations();
         initFormValidation();
@@ -327,8 +472,34 @@ const init = () => {
         initHeaderScroll();
         initDateConstraints();
         initActiveNav();
+        initCardInteractions();
+        initFaqAccordion();
+        initAccessibility();
+        initLazyLoading();
+    }
+};
+
+// ===== ADD SHAKE ANIMATION TO STYLESHEET =====
+const addShakeAnimation = () => {
+    if (!document.getElementById('shake-animation')) {
+        const style = document.createElement('style');
+        style.id = 'shake-animation';
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-5px); }
+                75% { transform: translateX(5px); }
+            }
+            
+            .keyboard-nav *:focus {
+                outline: 3px solid #8B2635;
+                outline-offset: 2px;
+            }
+        `;
+        document.head.appendChild(style);
     }
 };
 
 // Start the application
+addShakeAnimation();
 init();
