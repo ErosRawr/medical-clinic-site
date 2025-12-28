@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact NovaCare Clinic to schedule an appointment or reach our team. Walk-ins welcome for urgent care.">
-    <title>Contact Us | NovaCare Clinic</title>
+    <meta name="description" content="Learn about NovaCare Clinic's mission, values, and experienced medical team serving our community since 2004.">
+    <title>About Us | NovaCare Clinic</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -26,8 +26,8 @@
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
                     <li><a href="pricing-insurance.html" class="nav-link">Pricing & Insurance</a></li>
-                    <li><a href="about.html" class="nav-link">About Us</a></li>
-                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                    <li><a href="about.html" class="nav-link active">About Us</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                     <li><a href="contact.html#appointment" class="btn btn-primary btn-nav">Schedule Visit</a></li>
                 </ul>
             </nav>
@@ -37,275 +37,310 @@
     <!-- PAGE HEADER -->
     <section class="page-header">
         <div class="container">
-            <h1>Contact Us</h1>
+            <h1>About NovaCare Clinic</h1>
             <p class="page-subtitle">
-                We're here to answer your questions and schedule your visit
+                Serving our community with excellence in healthcare since 2004
             </p>
         </div>
     </section>
 
-    <!-- CONTACT INFO GRID -->
+    <!-- OUR STORY -->
     <section class="section">
         <div class="container">
-            <div class="contact-info-grid">
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">📞</div>
-                    <h3>Phone</h3>
-                    <p><strong>Main:</strong> <a href="tel:+15125551234">(512) 555-1234</a></p>
-                    <p><strong>Billing:</strong> <a href="tel:+15125551235">(512) 555-1235</a></p>
-                    <p class="contact-note">Monday - Friday: 8:00 AM - 6:00 PM</p>
-                </div>
-
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">📧</div>
-                    <h3>Email</h3>
-                    <p><a href="mailto:info@novacareclinic.com">info@novacareclinic.com</a></p>
-                    <p><a href="mailto:billing@novacareclinic.com">billing@novacareclinic.com</a></p>
-                    <p class="contact-note">We respond within 24 hours</p>
-                </div>
-
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">📍</div>
-                    <h3>Location</h3>
-                    <p>
-                        1234 Medical Center Drive<br>
-                        Austin, TX 78701
-                    </p>
-                    <p class="contact-note">Free parking available</p>
-                </div>
-
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">🕐</div>
-                    <h3>Hours</h3>
-                    <p>
-                        <strong>Mon - Fri:</strong> 8:00 AM - 6:00 PM<br>
-                        <strong>Saturday:</strong> 9:00 AM - 2:00 PM<br>
-                        <strong>Sunday:</strong> Closed
-                    </p>
-                    <p class="contact-note">Urgent care: Extended hours available</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- APPOINTMENT FORM -->
-    <section class="section bg-light" id="appointment">
-        <div class="container">
-            <div class="section-header center">
-                <h2>Schedule an Appointment</h2>
-                <div class="divider"></div>
-                <p class="section-description">
-                    Complete the form below and our scheduling team will contact you within 
-                    one business day to confirm your appointment.
+            <div class="content-narrow">
+                <h2>Our Story</h2>
+                <div class="divider-left"></div>
+                <p class="lead-text">
+                    NovaCare Clinic was founded in 2004 with a simple mission: to provide accessible, 
+                    high-quality healthcare to families in our community. What began as a small primary 
+                    care practice has grown into a comprehensive medical facility serving thousands of 
+                    patients annually.
+                </p>
+                <p>
+                    Over the past two decades, we have expanded our services, welcomed new physicians 
+                    to our team, and invested in modern medical technology—all while maintaining our 
+                    commitment to personalized, compassionate care. Our growth reflects the trust our 
+                    community has placed in us, and we remain dedicated to serving you and your family 
+                    for generations to come.
                 </p>
             </div>
-
-            <div class="form-wrapper">
-                <form id="appointmentForm" class="appointment-form">
-                    <div class="success-message" id="successMessage">
-                        <p><strong>Thank you!</strong> Your appointment request has been received. 
-                        Our team will contact you shortly to confirm your appointment.</p>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="firstName">First Name *</label>
-                            <input type="text" id="firstName" name="firstName" required>
-                            <span class="error-message" id="firstNameError"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="lastName">Last Name *</label>
-                            <input type="text" id="lastName" name="lastName" required>
-                            <span class="error-message" id="lastNameError"></span>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                            <span class="error-message" id="emailError"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                            <span class="error-message" id="phoneError"></span>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="datePreference">Preferred Date</label>
-                            <input type="date" id="datePreference" name="datePreference">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="timePreference">Preferred Time</label>
-                            <select id="timePreference" name="timePreference">
-                                <option value="">Select a time</option>
-                                <option value="morning">Morning (8:00 AM - 12:00 PM)</option>
-                                <option value="afternoon">Afternoon (12:00 PM - 4:00 PM)</option>
-                                <option value="evening">Evening (4:00 PM - 6:00 PM)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="serviceType">Type of Visit *</label>
-                        <select id="serviceType" name="serviceType" required>
-                            <option value="">Select service type</option>
-                            <option value="primary-care">Primary Care</option>
-                            <option value="pediatrics">Pediatric Care</option>
-                            <option value="womens-health">Women's Health</option>
-                            <option value="physical-therapy">Physical Therapy</option>
-                            <option value="urgent-care">Urgent Care</option>
-                            <option value="annual-physical">Annual Physical</option>
-                            <option value="follow-up">Follow-up Visit</option>
-                        </select>
-                        <span class="error-message" id="serviceTypeError"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="patientType">Patient Status *</label>
-                        <select id="patientType" name="patientType" required>
-                            <option value="">Select patient status</option>
-                            <option value="new">New Patient</option>
-                            <option value="existing">Existing Patient</option>
-                        </select>
-                        <span class="error-message" id="patientTypeError"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Reason for Visit / Additional Information</label>
-                        <textarea id="message" name="message" rows="5" 
-                            placeholder="Please briefly describe your reason for the visit or any specific concerns..."></textarea>
-                    </div>
-
-                    <div class="form-group checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="consent" name="consent" required>
-                            <span>I consent to being contacted by NovaCare Clinic regarding my appointment *</span>
-                        </label>
-                        <span class="error-message" id="consentError"></span>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-large">Submit Appointment Request</button>
-
-                    <p class="form-note">
-                        * Required fields. For urgent medical needs, please call us directly at 
-                        <a href="tel:+15125551234">(512) 555-1234</a>.
-                    </p>
-                </form>
-            </div>
         </div>
     </section>
 
-    <!-- MAP & DIRECTIONS -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header center">
-                <h2>Location & Directions</h2>
-                <div class="divider"></div>
-            </div>
-
-            <div class="map-section">
-                <div class="map-placeholder">
-                    <!-- Google Maps embed would go here -->
-                    <div class="map-placeholder-content">
-                        <p>📍 Map Placeholder</p>
-                        <p class="map-note">Replace with Google Maps iframe embed</p>
-                    </div>
-                </div>
-
-                <div class="directions-info">
-                    <h3>Getting Here</h3>
-                    <div class="divider-left"></div>
-                    
-                    <div class="directions-section">
-                        <h4>Address</h4>
-                        <p>
-                            NovaCare Clinic<br>
-                            1234 Medical Center Drive<br>
-                            Austin, TX 78701
-                        </p>
-                    </div>
-
-                    <div class="directions-section">
-                        <h4>Parking</h4>
-                        <p>
-                            Free parking is available in the lot adjacent to the building. 
-                            Handicap accessible parking spaces are located near the main entrance.
-                        </p>
-                    </div>
-
-                    <div class="directions-section">
-                        <h4>Public Transportation</h4>
-                        <p>
-                            Capital Metro Bus Routes 7, 18, and 20 stop within one block of our clinic. 
-                            The nearest MetroRail station is Downtown Station (0.5 miles).
-                        </p>
-                    </div>
-
-                    <div class="directions-section">
-                        <h4>Accessibility</h4>
-                        <p>
-                            Our facility is fully wheelchair accessible with automatic doors, 
-                            accessible restrooms, and elevator access to all floors.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DEPARTMENTS -->
+    <!-- MISSION & VALUES -->
     <section class="section bg-light">
         <div class="container">
             <div class="section-header center">
-                <h2>Department Contacts</h2>
+                <h2>Our Mission & Values</h2>
                 <div class="divider"></div>
             </div>
 
-            <div class="departments-grid">
-                <div class="department-card">
-                    <h3>Scheduling & Appointments</h3>
-                    <p><strong>Phone:</strong> <a href="tel:+15125551234">(512) 555-1234</a></p>
-                    <p><strong>Email:</strong> <a href="mailto:appointments@novacareclinic.com">appointments@novacareclinic.com</a></p>
+            <div class="values-grid">
+                <div class="value-item fade-in">
+                    <h3>Patient-Centered Care</h3>
+                    <p>
+                        We place our patients at the center of everything we do, treating each 
+                        individual with dignity, respect, and compassion.
+                    </p>
                 </div>
 
-                <div class="department-card">
-                    <h3>Billing & Insurance</h3>
-                    <p><strong>Phone:</strong> <a href="tel:+15125551235">(512) 555-1235</a></p>
-                    <p><strong>Email:</strong> <a href="mailto:billing@novacareclinic.com">billing@novacareclinic.com</a></p>
+                <div class="value-item fade-in">
+                    <h3>Clinical Excellence</h3>
+                    <p>
+                        Our physicians and staff are committed to providing evidence-based medical 
+                        care of the highest quality.
+                    </p>
                 </div>
 
-                <div class="department-card">
-                    <h3>Medical Records</h3>
-                    <p><strong>Phone:</strong> <a href="tel:+15125551236">(512) 555-1236</a></p>
-                    <p><strong>Email:</strong> <a href="mailto:records@novacareclinic.com">records@novacareclinic.com</a></p>
+                <div class="value-item fade-in">
+                    <h3>Accessibility</h3>
+                    <p>
+                        We strive to make healthcare accessible to all, offering flexible scheduling, 
+                        multiple payment options, and financial assistance programs.
+                    </p>
                 </div>
 
-                <div class="department-card">
-                    <h3>Patient Portal Support</h3>
-                    <p><strong>Phone:</strong> <a href="tel:+15125551237">(512) 555-1237</a></p>
-                    <p><strong>Email:</strong> <a href="mailto:portal@novacareclinic.com">portal@novacareclinic.com</a></p>
+                <div class="value-item fade-in">
+                    <h3>Community Partnership</h3>
+                    <p>
+                        We are proud to be part of this community and actively participate in local 
+                        health initiatives and education programs.
+                    </p>
+                </div>
+
+                <div class="value-item fade-in">
+                    <h3>Continuous Improvement</h3>
+                    <p>
+                        We invest in ongoing education, technology, and process improvements to 
+                        enhance the care we provide.
+                    </p>
+                </div>
+
+                <div class="value-item fade-in">
+                    <h3>Integrity</h3>
+                    <p>
+                        We maintain the highest ethical standards in all our interactions, building 
+                        trust through honesty and transparency.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- EMERGENCY NOTICE -->
-    <section class="section emergency-notice">
+    <!-- OUR TEAM -->
+    <section class="section">
         <div class="container">
-            <div class="emergency-content">
-                <h2>⚠️ In Case of Emergency</h2>
-                <p>
-                    If you are experiencing a life-threatening emergency, call 911 immediately 
-                    or go to the nearest emergency room. Do not use this form or call our office 
-                    for emergency medical situations.
+            <div class="section-header center">
+                <h2>Our Medical Team</h2>
+                <div class="divider"></div>
+                <p class="section-description">
+                    Meet the dedicated physicians and healthcare professionals who make up the 
+                    NovaCare Clinic team.
                 </p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member fade-in">
+                    <div class="team-member-image">
+                        <!-- Placeholder for physician photo -->
+                    </div>
+                    <div class="team-member-info">
+                        <h3>Dr. Sarah Martinez, MD</h3>
+                        <p class="team-member-title">Medical Director, Family Medicine</p>
+                        <p class="team-member-credentials">
+                            Board Certified in Family Medicine<br>
+                            MD, University of Texas Medical School<br>
+                            20+ years of experience
+                        </p>
+                        <p>
+                            Dr. Martinez has been with NovaCare Clinic since its founding and serves 
+                            as our Medical Director. She specializes in comprehensive family care and 
+                            preventive medicine.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in">
+                    <div class="team-member-image">
+                        <!-- Placeholder for physician photo -->
+                    </div>
+                    <div class="team-member-info">
+                        <h3>Dr. James Chen, MD</h3>
+                        <p class="team-member-title">Primary Care Physician</p>
+                        <p class="team-member-credentials">
+                            Board Certified in Internal Medicine<br>
+                            MD, Baylor College of Medicine<br>
+                            15+ years of experience
+                        </p>
+                        <p>
+                            Dr. Chen focuses on adult medicine and chronic disease management. He has 
+                            a special interest in diabetes care and cardiovascular health.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in">
+                    <div class="team-member-image">
+                        <!-- Placeholder for physician photo -->
+                    </div>
+                    <div class="team-member-info">
+                        <h3>Dr. Emily Rodriguez, MD</h3>
+                        <p class="team-member-title">Pediatrician</p>
+                        <p class="team-member-credentials">
+                            Board Certified in Pediatrics<br>
+                            MD, Dell Medical School<br>
+                            12+ years of experience
+                        </p>
+                        <p>
+                            Dr. Rodriguez provides compassionate care for children from birth through 
+                            adolescence. She is passionate about child development and preventive care.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in">
+                    <div class="team-member-image">
+                        <!-- Placeholder for physician photo -->
+                    </div>
+                    <div class="team-member-info">
+                        <h3>Dr. Michael Thompson, MD</h3>
+                        <p class="team-member-title">Family Medicine Physician</p>
+                        <p class="team-member-credentials">
+                            Board Certified in Family Medicine<br>
+                            MD, McGovern Medical School<br>
+                            10+ years of experience
+                        </p>
+                        <p>
+                            Dr. Thompson treats patients of all ages and has particular expertise in 
+                            sports medicine and minor procedural care.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in">
+                    <div class="team-member-image">
+                        <!-- Placeholder for physician photo -->
+                    </div>
+                    <div class="team-member-info">
+                        <h3>Dr. Lisa Patel, DO</h3>
+                        <p class="team-member-title">Women's Health Specialist</p>
+                        <p class="team-member-credentials">
+                            Board Certified in Family Medicine<br>
+                            DO, University of North Texas<br>
+                            14+ years of experience
+                        </p>
+                        <p>
+                            Dr. Patel provides comprehensive women's healthcare including annual exams, 
+                            family planning, and prenatal care coordination.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in">
+                    <div class="team-member-image">
+                        <!-- Placeholder for physician photo -->
+                    </div>
+                    <div class="team-member-info">
+                        <h3>David Anderson, PT, DPT</h3>
+                        <p class="team-member-title">Physical Therapy Director</p>
+                        <p class="team-member-credentials">
+                            Doctor of Physical Therapy<br>
+                            Licensed Physical Therapist<br>
+                            18+ years of experience
+                        </p>
+                        <p>
+                            David leads our physical therapy department and specializes in orthopedic 
+                            rehabilitation and sports injury recovery.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUPPORT STAFF -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="content-narrow center">
+                <h2>Our Support Team</h2>
+                <div class="divider"></div>
+                <p>
+                    Behind our physicians is a dedicated team of nurse practitioners, physician assistants, 
+                    registered nurses, medical assistants, laboratory technicians, and administrative staff. 
+                    Together, they ensure that every patient receives excellent care and support throughout 
+                    their healthcare journey.
+                </p>
+                <p>
+                    Our entire team participates in ongoing training and professional development to stay 
+                    current with the latest medical practices and healthcare innovations.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACCREDITATIONS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header center">
+                <h2>Accreditations & Affiliations</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="accreditations-grid">
+                <div class="accreditation-item">
+                    <div class="accreditation-badge"></div>
+                    <p>Accredited by the Joint Commission</p>
+                </div>
+                <div class="accreditation-item">
+                    <div class="accreditation-badge"></div>
+                    <p>Member, American Medical Association</p>
+                </div>
+                <div class="accreditation-item">
+                    <div class="accreditation-badge"></div>
+                    <p>Texas Medical Board Licensed</p>
+                </div>
+                <div class="accreditation-item">
+                    <div class="accreditation-badge"></div>
+                    <p>Patient-Centered Medical Home (PCMH) Recognized</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMUNITY INVOLVEMENT -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="content-narrow center">
+                <h2>Community Involvement</h2>
+                <div class="divider"></div>
+                <p>
+                    NovaCare Clinic is proud to be an active member of our community. We participate 
+                    in local health fairs, provide free health screenings, and support health education 
+                    programs in schools. Our physicians regularly volunteer their time to community 
+                    organizations and health initiatives.
+                </p>
+                <p>
+                    We believe that healthy communities start with accessible, quality healthcare and 
+                    education. That's why we're committed to serving not just our patients, but the 
+                    entire community.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Become a Patient</h2>
+                <p>
+                    Experience the NovaCare difference. We're accepting new patients and would be 
+                    honored to serve you and your family.
+                </p>
+                <div class="cta-actions">
+                    <a href="contact.html#appointment" class="btn btn-primary btn-large">Schedule Your First Visit</a>
+                    <a href="contact.html" class="btn btn-outline btn-large">Contact Us</a>
+                </div>
             </div>
         </div>
     </section>
