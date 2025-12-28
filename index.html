@@ -3,461 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NovaCare Clinic - Professional care. Modern facilities. Trusted doctors.</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="NovaCare Clinic provides comprehensive healthcare services with experienced physicians and modern facilities.">
+    <title>NovaCare Clinic | Comprehensive Healthcare Services</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- HEADER & NAVIGATION -->
-    <header class="header">
+    <header class="site-header">
         <div class="container">
-            <nav class="nav">
-                <a href="#" class="logo">Nova<span>Care</span></a>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#doctors" class="nav-link">Doctors</a></li>
-                    <li><a href="#pricing" class="nav-link">Pricing</a></li>
-                    <li><a href="#faq" class="nav-link">FAQ</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                    <li><a href="#appointment" class="btn btn-primary" style="padding: 10px 20px;">Book Now</a></li>
-                </ul>
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <nav class="main-nav">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">NovaCare Clinic</span>
+                </a>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="pricing-insurance.html" class="nav-link">Pricing & Insurance</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="contact.html#appointment" class="btn btn-primary btn-nav">Schedule Visit</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
     <!-- HERO SECTION -->
-    <section class="hero">
+    <section class="hero-section">
         <div class="hero-content">
-            <h1>NovaCare Clinic</h1>
-            <p class="hero-tagline">Professional care. Modern facilities. Trusted doctors.</p>
-            <div class="hero-cta">
-                <a href="#appointment" class="btn btn-primary">Book Appointment</a>
-                <a href="tel:+525512345678" class="btn btn-secondary">Call Now</a>
+            <div class="container">
+                <div class="hero-text">
+                    <h1>Comprehensive Healthcare for Your Family</h1>
+                    <p class="hero-description">
+                        NovaCare Clinic has been serving our community for over 20 years, 
+                        providing quality medical care with compassion and excellence.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="contact.html#appointment" class="btn btn-primary">Schedule an Appointment</a>
+                        <a href="services.html" class="btn btn-secondary">Our Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image-placeholder">
+            <!-- Placeholder for hero image -->
+        </div>
+    </section>
+
+    <!-- ALERT BAR (Optional - for important notices) -->
+    <section class="alert-bar">
+        <div class="container">
+            <p><strong>Important Notice:</strong> We are accepting new patients. Same-day appointments available for urgent care. Call <a href="tel:+15125551234">(512) 555-1234</a></p>
+        </div>
+    </section>
+
+    <!-- MISSION STATEMENT -->
+    <section class="section mission-section">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="section-header center">
+                    <h2>Our Mission</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="mission-content">
+                    <p class="lead-text">
+                        At NovaCare Clinic, we are committed to providing accessible, high-quality healthcare 
+                        to individuals and families in our community. Our team of experienced physicians and 
+                        healthcare professionals work collaboratively to ensure comprehensive, patient-centered care.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
-    <section class="section services" id="services">
+    <!-- KEY SERVICES OVERVIEW -->
+    <section class="section services-overview">
         <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-subtitle">Comprehensive healthcare services tailored to your needs</p>
-            
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="medical">Medical</button>
-                <button class="filter-btn" data-filter="dental">Dental</button>
-                <button class="filter-btn" data-filter="lab">Lab</button>
+            <div class="section-header center">
+                <h2>Medical Services</h2>
+                <div class="divider"></div>
+                <p class="section-description">
+                    We offer a full range of primary care and specialty services to meet your healthcare needs.
+                </p>
             </div>
 
-            <div class="services-grid" id="servicesGrid">
-                <div class="service-card" data-category="medical">
-                    <div class="service-icon">🩺</div>
-                    <h3>General Consultation</h3>
-                    <p>Comprehensive medical examinations and health assessments by experienced physicians for all age groups.</p>
+            <div class="services-grid">
+                <div class="service-item fade-in">
+                    <div class="service-icon-placeholder"></div>
+                    <h3>Primary Care</h3>
+                    <p>
+                        Comprehensive primary care services including annual physicals, 
+                        preventive care, and management of chronic conditions.
+                    </p>
+                    <a href="services.html#primary-care" class="link-arrow">Learn more</a>
                 </div>
 
-                <div class="service-card" data-category="dental">
-                    <div class="service-icon">🦷</div>
-                    <h3>Dental Care</h3>
-                    <p>Complete dental services including cleanings, fillings, extractions, and cosmetic procedures.</p>
+                <div class="service-item fade-in">
+                    <div class="service-icon-placeholder"></div>
+                    <h3>Pediatric Care</h3>
+                    <p>
+                        Specialized healthcare for children from birth through adolescence, 
+                        including well-child visits and immunizations.
+                    </p>
+                    <a href="services.html#pediatrics" class="link-arrow">Learn more</a>
                 </div>
 
-                <div class="service-card" data-category="lab">
-                    <div class="service-icon">🔬</div>
-                    <h3>Laboratory Tests</h3>
-                    <p>State-of-the-art diagnostic laboratory with quick turnaround times and accurate results.</p>
+                <div class="service-item fade-in">
+                    <div class="service-icon-placeholder"></div>
+                    <h3>Women's Health</h3>
+                    <p>
+                        Complete women's healthcare services including annual exams, 
+                        family planning, and prenatal care coordination.
+                    </p>
+                    <a href="services.html#womens-health" class="link-arrow">Learn more</a>
                 </div>
 
-                <div class="service-card" data-category="medical">
-                    <div class="service-icon">👶</div>
-                    <h3>Pediatrics</h3>
-                    <p>Specialized care for children from infancy through adolescence, including vaccinations and check-ups.</p>
+                <div class="service-item fade-in">
+                    <div class="service-icon-placeholder"></div>
+                    <h3>Laboratory Services</h3>
+                    <p>
+                        On-site laboratory with comprehensive diagnostic testing and 
+                        rapid results for timely treatment decisions.
+                    </p>
+                    <a href="services.html#laboratory" class="link-arrow">Learn more</a>
                 </div>
 
-                <div class="service-card" data-category="medical">
-                    <div class="service-icon">💪</div>
+                <div class="service-item fade-in">
+                    <div class="service-icon-placeholder"></div>
                     <h3>Physical Therapy</h3>
-                    <p>Rehabilitation and therapeutic exercises to restore movement and reduce pain after injury or surgery.</p>
+                    <p>
+                        Rehabilitation services to help restore function, improve mobility, 
+                        and reduce pain following injury or surgery.
+                    </p>
+                    <a href="services.html#physical-therapy" class="link-arrow">Learn more</a>
                 </div>
+
+                <div class="service-item fade-in">
+                    <div class="service-icon-placeholder"></div>
+                    <h3>Urgent Care</h3>
+                    <p>
+                        Walk-in urgent care services for non-life-threatening illnesses 
+                        and injuries with extended hours.
+                    </p>
+                    <a href="services.html#urgent-care" class="link-arrow">Learn more</a>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="services.html" class="btn btn-outline">View All Services</a>
             </div>
         </div>
     </section>
 
-    <!-- WHY CHOOSE US SECTION -->
-    <section class="section why-choose">
+    <!-- WHY CHOOSE US -->
+    <section class="section why-choose-section bg-light">
         <div class="container">
-            <h2 class="section-title">Why Choose Us</h2>
-            <p class="section-subtitle">Excellence in healthcare with a patient-first approach</p>
-            
+            <div class="section-header center">
+                <h2>Why Choose NovaCare Clinic</h2>
+                <div class="divider"></div>
+            </div>
+
             <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">✓</div>
-                    <h3>Certified Professionals</h3>
-                    <p>Board-certified doctors with years of experience and continuous training</p>
+                <div class="feature-box fade-in">
+                    <div class="feature-number">20+</div>
+                    <h3>Years of Service</h3>
+                    <p>Providing trusted healthcare to our community since 2004</p>
                 </div>
 
-                <div class="feature-item">
-                    <div class="feature-icon">📅</div>
-                    <h3>Same-Day Appointments</h3>
-                    <p>Flexible scheduling with urgent care availability for immediate needs</p>
+                <div class="feature-box fade-in">
+                    <div class="feature-number">15</div>
+                    <h3>Healthcare Providers</h3>
+                    <p>Experienced physicians, nurses, and specialists</p>
                 </div>
 
-                <div class="feature-item">
-                    <div class="feature-icon">🏥</div>
-                    <h3>Modern Equipment</h3>
-                    <p>Latest medical technology for accurate diagnosis and effective treatment</p>
+                <div class="feature-box fade-in">
+                    <div class="feature-number">24/7</div>
+                    <h3>Patient Portal</h3>
+                    <p>Access your records, test results, and communicate with your care team</p>
                 </div>
 
-                <div class="feature-item">
-                    <div class="feature-icon">📍</div>
-                    <h3>Central Location</h3>
-                    <p>Conveniently located with ample parking and accessible by public transport</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DOCTORS SECTION -->
-    <section class="section doctors" id="doctors">
-        <div class="container">
-            <h2 class="section-title">Our Medical Team</h2>
-            <p class="section-subtitle">Meet our experienced healthcare professionals</p>
-            
-            <div class="doctors-grid">
-                <div class="doctor-card">
-                    <div class="doctor-image">👨‍⚕️</div>
-                    <div class="doctor-info">
-                        <h3>Dr. Carlos Mendoza</h3>
-                        <p class="doctor-specialty">General Practitioner</p>
-                        <p>15+ years of experience in family medicine and preventive care. Dedicated to patient wellness.</p>
-                    </div>
-                </div>
-
-                <div class="doctor-card">
-                    <div class="doctor-image">👩‍⚕️</div>
-                    <div class="doctor-info">
-                        <h3>Dr. Ana Rodriguez</h3>
-                        <p class="doctor-specialty">Pediatrician</p>
-                        <p>Specialized in child healthcare with a gentle approach that puts young patients at ease.</p>
-                    </div>
-                </div>
-
-                <div class="doctor-card">
-                    <div class="doctor-image">👨‍⚕️</div>
-                    <div class="doctor-info">
-                        <h3>Dr. Miguel Torres</h3>
-                        <p class="doctor-specialty">Dentist</p>
-                        <p>Expert in restorative and cosmetic dentistry, committed to creating healthy, beautiful smiles.</p>
-                    </div>
-                </div>
-
-                <div class="doctor-card">
-                    <div class="doctor-image">👩‍⚕️</div>
-                    <div class="doctor-info">
-                        <h3>Dr. Sofia Martinez</h3>
-                        <p class="doctor-specialty">Physical Therapist</p>
-                        <p>Specialized in sports rehabilitation and post-surgical recovery with personalized treatment plans.</p>
-                    </div>
+                <div class="feature-box fade-in">
+                    <div class="feature-number">100%</div>
+                    <h3>Insurance Accepted</h3>
+                    <p>We accept most major insurance plans and offer flexible payment options</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- APPOINTMENT FORM SECTION -->
-    <section class="section appointment" id="appointment">
+    <!-- PATIENT RESOURCES -->
+    <section class="section resources-section">
         <div class="container">
-            <h2 class="section-title">Book an Appointment</h2>
-            <p class="section-subtitle">Schedule your visit in just a few simple steps</p>
-            
-            <div class="form-container">
-                <div class="success-message" id="successMessage">
-                    ✓ Thank you! Your appointment request has been received. We'll contact you shortly to confirm.
-                </div>
+            <div class="section-header center">
+                <h2>Patient Resources</h2>
+                <div class="divider"></div>
+            </div>
 
-                <form id="appointmentForm">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
-                        <div class="error-message" id="nameError">Please enter your full name</div>
-                    </div>
+            <div class="resources-grid">
+                <a href="contact.html#appointment" class="resource-card fade-in">
+                    <h3>Schedule Appointment</h3>
+                    <p>Book your visit online or call our scheduling department</p>
+                </a>
 
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required>
-                        <div class="error-message" id="phoneError">Please enter a valid phone number</div>
-                    </div>
+                <a href="pricing-insurance.html" class="resource-card fade-in">
+                    <h3>Insurance & Billing</h3>
+                    <p>View accepted insurance plans and payment information</p>
+                </a>
 
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                        <div class="error-message" id="emailError">Please enter a valid email address</div>
-                    </div>
+                <a href="#" class="resource-card fade-in">
+                    <h3>Patient Portal</h3>
+                    <p>Access your medical records and test results securely</p>
+                </a>
 
-                    <div class="form-group">
-                        <label for="service">Service *</label>
-                        <select id="service" name="service" required>
-                            <option value="">Select a service</option>
-                            <option value="general">General Consultation</option>
-                            <option value="dental">Dental Care</option>
-                            <option value="lab">Laboratory Tests</option>
-                            <option value="pediatrics">Pediatrics</option>
-                            <option value="therapy">Physical Therapy</option>
-                        </select>
-                        <div class="error-message" id="serviceError">Please select a service</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Additional Information</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your concerns or symptoms (optional)"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Appointment Request</button>
-                </form>
+                <a href="contact.html" class="resource-card fade-in">
+                    <h3>Contact Us</h3>
+                    <p>Get in touch with our team for questions or assistance</p>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- PRICING SECTION -->
-    <section class="section pricing" id="pricing">
+    <!-- CTA SECTION -->
+    <section class="section cta-section">
         <div class="container">
-            <h2 class="section-title">Transparent Pricing</h2>
-            <p class="section-subtitle">Affordable healthcare with no hidden costs</p>
-            
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Basic Consultation</h3>
-                    <div class="pricing-amount">$500 <span>MXN</span></div>
-                    <ul class="pricing-features">
-                        <li>Initial assessment</li>
-                        <li>Medical examination</li>
-                        <li>Health recommendations</li>
-                        <li>Prescription if needed</li>
-                    </ul>
-                    <a href="#appointment" class="btn btn-primary" style="width: 100%;">Book Now</a>
-                </div>
-
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">Most Popular</div>
-                    <h3>Specialist Visit</h3>
-                    <div class="pricing-amount">$900 <span>MXN</span></div>
-                    <ul class="pricing-features">
-                        <li>Specialized consultation</li>
-                        <li>Comprehensive examination</li>
-                        <li>Treatment plan</li>
-                        <li>Follow-up included</li>
-                    </ul>
-                    <a href="#appointment" class="btn btn-primary" style="width: 100%;">Book Now</a>
-                </div>
-
-                <div class="pricing-card">
-                    <h3>Lab Package</h3>
-                    <div class="pricing-amount">$750 <span>MXN</span></div>
-                    <ul class="pricing-features">
-                        <li>Basic blood work</li>
-                        <li>Results in 24 hours</li>
-                        <li>Digital report</li>
-                        <li>Consultation included</li>
-                    </ul>
-                    <a href="#appointment" class="btn btn-primary" style="width: 100%;">Book Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS SECTION -->
-    <section class="section testimonials">
-        <div class="container">
-            <h2 class="section-title">What Our Patients Say</h2>
-            <p class="testimonials-note">* Sample testimonials for demonstration purposes</p>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Exceptional service! The staff is professional and caring. Dr. Mendoza took time to answer all my questions and made me feel comfortable throughout my visit."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MG</div>
-                        <div class="author-info">
-                            <h4>Maria Garcia</h4>
-                            <p>Patient since 2023</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"My kids love Dr. Rodriguez! She's patient, kind, and makes every visit a positive experience. The clinic is always clean and well-organized."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">JL</div>
-                        <div class="author-info">
-                            <h4>Jorge Lopez</h4>
-                            <p>Patient since 2022</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Great experience from booking to treatment. The online system is easy to use, and same-day appointments are a lifesaver. Highly recommend NovaCare!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">LS</div>
-                        <div class="author-info">
-                            <h4>Laura Sanchez</h4>
-                            <p>Patient since 2024</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section class="section faq" id="faq">
-        <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <p class="section-subtitle">Find answers to common questions about our services</p>
-            
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question">How do I book an appointment?</button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            You can book an appointment online using our booking form, by calling our clinic directly at +52 55 1234 5678, or by sending us a WhatsApp message. We offer same-day appointments based on availability and will confirm your booking within a few hours.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">What insurance plans do you accept?</button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            We accept most major insurance providers including IMSS, ISSSTE, and private insurance plans. We also offer competitive self-pay rates for those without insurance. Please contact our billing department to verify your specific coverage before your visit.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">What are your operating hours?</button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            We're open Monday through Friday from 8:00 AM to 8:00 PM, and Saturdays from 9:00 AM to 2:00 PM. We're closed on Sundays and major holidays. Emergency consultations can be arranged outside regular hours by calling our emergency line.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">How will I receive my lab results?</button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Laboratory results are typically available within 24-48 hours. You'll receive them via email as a secure digital report, and we'll also call you to discuss the results with our medical team. Physical copies can be picked up at the clinic if preferred.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">Do you offer telemedicine consultations?</button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Yes, we offer virtual consultations for follow-up visits, prescription renewals, and general medical questions. Telemedicine appointments can be scheduled through our online booking system and are conducted via secure video call.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">We're here to help with any questions or concerns</p>
-            
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div class="contact-details">
-                            <h3>Address</h3>
-                            <p>Av. Revolución 1234, Col. San Ángel<br>Ciudad de México, CDMX 01000<br>Mexico</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">📞</div>
-                        <div class="contact-details">
-                            <h3>Phone</h3>
-                            <p><a href="tel:+525512345678">+52 55 1234 5678</a></p>
-                            <p>Monday - Friday: 8am - 8pm<br>Saturday: 9am - 2pm</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">💬</div>
-                        <div class="contact-details">
-                            <h3>WhatsApp</h3>
-                            <p><a href="https://wa.me/525512345678" target="_blank">Chat with us on WhatsApp</a></p>
-                            <p>Quick responses during business hours</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">✉️</div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <p><a href="mailto:info@novacareclinic.com">info@novacareclinic.com</a></p>
-                            <p>We'll respond within 24 hours</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="map-placeholder">
-                    📍 Google Maps Embed Placeholder<br>
-                    <small style="opacity: 0.8; margin-top: 8px; display: block;">Replace with actual iframe embed code</small>
+            <div class="cta-content">
+                <h2>Ready to Schedule Your Visit?</h2>
+                <p>
+                    Our team is here to provide the healthcare you and your family deserve. 
+                    New patients welcome.
+                </p>
+                <div class="cta-actions">
+                    <a href="contact.html#appointment" class="btn btn-primary btn-large">Schedule Appointment</a>
+                    <a href="tel:+15125551234" class="btn btn-outline btn-large">Call (512) 555-1234</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer">
+    <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>NovaCare Clinic</h3>
-                    <p>Providing professional healthcare services with modern facilities and trusted doctors. Your health is our priority.</p>
+                    <p>
+                        Providing comprehensive healthcare services to our community since 2004.
+                    </p>
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">f</a>
-                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
-                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="Facebook" class="social-icon">f</a>
+                        <a href="#" aria-label="Twitter" class="social-icon">t</a>
+                        <a href="#" aria-label="Instagram" class="social-icon">i</a>
+                        <a href="#" aria-label="LinkedIn" class="social-icon">in</a>
                     </div>
                 </div>
 
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <p><a href="#services" style="color: white; opacity: 0.8; text-decoration: none;">Services</a></p>
-                    <p><a href="#doctors" style="color: white; opacity: 0.8; text-decoration: none;">Our Team</a></p>
-                    <p><a href="#pricing" style="color: white; opacity: 0.8; text-decoration: none;">Pricing</a></p>
-                    <p><a href="#appointment" style="color: white; opacity: 0.8; text-decoration: none;">Book Now</a></p>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing-insurance.html">Pricing & Insurance</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Patient Portal</a></li>
+                    </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h3>Office Hours</h3>
-                    <p>Monday - Friday: 8:00 AM - 8:00 PM</p>
-                    <p>Saturday: 9:00 AM - 2:00 PM</p>
-                    <p>Sunday: Closed</p>
-                    <p style="margin-top: 16px;">Emergency line available 24/7</p>
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#primary-care">Primary Care</a></li>
+                        <li><a href="services.html#pediatrics">Pediatric Care</a></li>
+                        <li><a href="services.html#womens-health">Women's Health</a></li>
+                        <li><a href="services.html#laboratory">Laboratory</a></li>
+                        <li><a href="services.html#physical-therapy">Physical Therapy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <strong>Address:</strong><br>
+                            1234 Medical Center Drive<br>
+                            Austin, TX 78701
+                        </li>
+                        <li>
+                            <strong>Phone:</strong><br>
+                            <a href="tel:+15125551234">(512) 555-1234</a>
+                        </li>
+                        <li>
+                            <strong>Hours:</strong><br>
+                            Mon-Fri: 8:00 AM - 6:00 PM<br>
+                            Sat: 9:00 AM - 2:00 PM
+                        </li>
+                    </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p>&copy; 2025 NovaCare Clinic. All rights reserved.</p>
-                <p class="disclaimer">This is a fictional project created for portfolio purposes only. Not a real medical facility.</p>
+                <p class="footer-disclaimer">
+                    This is a fictional website created for portfolio demonstration purposes.
+                </p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
