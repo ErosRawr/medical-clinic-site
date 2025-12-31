@@ -394,113 +394,157 @@ const initLazyLoading = () => {
     }
 };
 
-// ===== TRUST CAROUSEL - ENHANCED =====
+// ===== TRUST CAROUSEL - FIXED VERSION =====
 const initTrustCarousel = () => {
     const carousel = document.getElementById('trustCarousel');
     if (!carousel) return;
-    
+
+    const track = document.getElementById('carouselTrack');
     const slides = carousel.querySelectorAll('.carousel-slide');
     const indicators = carousel.querySelectorAll('.indicator');
     const prevBtn = carousel.querySelector('.carousel-prev');
     const nextBtn = carousel.querySelector('.carousel-next');
-    
-    let currentSlide = 0;
-    let autoAdvanceInterval;
+
+    if (!track || slides.length === 0) return;
+
+    let currentIndex = 0;
+    let autoAdvanceTimer = null;
+    let isTransitioning = false;
     let touchStartX = 0;
     let touchEndX = 0;
-    
-    // Show specific slide
-    const showSlide = (index) => {
+
+    // Update carousel to show specific slide
+    const goToSlide = (index) => {
+        if (isTransitioning) return;
+
+        // Normalize index (wrap around)
         if (index >= slides.length) {
-            currentSlide = 0;
+            currentIndex = 0;
         } else if (index < 0) {
-            currentSlide = slides.length - 1;
+            currentIndex = slides.length - 1;
         } else {
-            currentSlide = index;
+            currentIndex = index;
         }
-        
-        slides.forEach((slide, i) => {
-            slide.classList.remove('active', 'prev');
-            if (i === currentSlide) {
-                slide.classList.add('active');
-            } else if (i < currentSlide) {
-                slide.classList.add('prev');
-            }
-        });
-        
+
+        // Prevent rapid transitions
+        isTransitioning = true;
+        setTimeout(() => {
+            isTransitioning = false;
+        }, 500);
+
+        // Transform track to show current slide
+        const offset = -(currentIndex * 100);
+        track.style.transform = `translateX(${offset}%)`;
+
+        // Update indicators
         indicators.forEach((indicator, i) => {
-            indicator.classList.toggle('active', i === currentSlide);
+            const isActive = i === currentIndex;
+            indicator.setAttribute('aria-selected', isActive);
         });
+
+        // Update ARIA live region for screen readers
+        carousel.setAttribute('aria-live', 'polite');
     };
-    
-    const nextSlide = () => showSlide(currentSlide + 1);
-    const prevSlide = () => showSlide(currentSlide - 1);
-    
+
+    // Navigation functions
+    const nextSlide = () => goToSlide(currentIndex + 1);
+    const prevSlide = () => goToSlide(currentIndex - 1);
+
+    // Auto-advance control
     const startAutoAdvance = () => {
         stopAutoAdvance();
-        autoAdvanceInterval = setInterval(() => nextSlide(), 7000);
+        autoAdvanceTimer = setInterval(nextSlide, 7000); // 7 seconds
     };
-    
+
     const stopAutoAdvance = () => {
-        if (autoAdvanceInterval) clearInterval(autoAdvanceInterval);
+        if (autoAdvanceTimer) {
+            clearInterval(autoAdvanceTimer);
+            autoAdvanceTimer = null;
+        }
     };
-    
+
+    // Button event listeners
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
             prevSlide();
             stopAutoAdvance();
-            startAutoAdvance();
+            setTimeout(startAutoAdvance, 1000); // Resume after 1 second
         });
     }
-    
+
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
             nextSlide();
             stopAutoAdvance();
-            startAutoAdvance();
+            setTimeout(startAutoAdvance, 1000);
         });
     }
-    
-    indicators.forEach((indicator, index) => {
+
+    // Indicator event listeners
+    indicators.forEach((indicator) => {
         indicator.addEventListener('click', () => {
-            showSlide(index);
-            stopAutoAdvance();
-            startAutoAdvance();
+            const slideIndex = parseInt(indicator.getAttribute('data-slide'), 10);
+            if (!isNaN(slideIndex)) {
+                goToSlide(slideIndex);
+                stopAutoAdvance();
+                setTimeout(startAutoAdvance, 1000);
+            }
         });
     });
-    
+
+    // Touch/swipe support for mobile
     carousel.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
+        stopAutoAdvance(); // Pause immediately on touch
     }, { passive: true });
-    
+
     carousel.addEventListener('touchend', (e) => {
         touchEndX = e.changedTouches[0].screenX;
         handleSwipe();
+        setTimeout(startAutoAdvance, 1000); // Resume after swipe
     }, { passive: true });
-    
+
     const handleSwipe = () => {
-        const swipeThreshold = 50;
+        const swipeThreshold = 50; // Minimum distance for a swipe
         const diff = touchStartX - touchEndX;
+
         if (Math.abs(diff) > swipeThreshold) {
-            if (diff > 0) nextSlide(); else prevSlide();
-            stopAutoAdvance();
-            startAutoAdvance();
+            if (diff > 0) {
+                nextSlide(); // Swiped left
+            } else {
+                prevSlide(); // Swiped right
+            }
         }
     };
-    
+
+    // Keyboard navigation
     carousel.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') { prevSlide(); stopAutoAdvance(); startAutoAdvance(); }
-        else if (e.key === 'ArrowRight') { nextSlide(); stopAutoAdvance(); startAutoAdvance(); }
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+            stopAutoAdvance();
+            setTimeout(startAutoAdvance, 1000);
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+            stopAutoAdvance();
+            setTimeout(startAutoAdvance, 1000);
+        }
     });
-    
+
+    // Pause on hover (desktop)
     carousel.addEventListener('mouseenter', stopAutoAdvance);
     carousel.addEventListener('mouseleave', startAutoAdvance);
-    
+
+    // Pause when tab is hidden
     document.addEventListener('visibilitychange', () => {
-        if (document.hidden) stopAutoAdvance(); else startAutoAdvance();
+        if (document.hidden) {
+            stopAutoAdvance();
+        } else {
+            startAutoAdvance();
+        }
     });
-    
-    showSlide(0);
+
+    // Initialize
+    goToSlide(0);
     startAutoAdvance();
 };
 
