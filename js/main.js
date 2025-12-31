@@ -3,32 +3,6 @@
  * Subtle, professional interactions for improved UX
  */
 
-// ===== ALERT BANNER MANAGEMENT =====
-const initAlertBanner = () => {
-    const banner = document.getElementById('alertBanner');
-    const closeBtn = document.getElementById('alertClose');
-    
-    if (!banner || !closeBtn) return;
-    
-    // Check if user has previously dismissed the alert
-    const isDismissed = sessionStorage.getItem('alertDismissed');
-    
-    if (isDismissed) {
-        banner.classList.add('hidden');
-    }
-    
-    // Handle close button click
-    closeBtn.addEventListener('click', () => {
-        banner.style.opacity = '0';
-        banner.style.transform = 'translateY(-100%)';
-        
-        setTimeout(() => {
-            banner.classList.add('hidden');
-            sessionStorage.setItem('alertDismissed', 'true');
-        }, 300);
-    });
-};
-
 // ===== MOBILE NAVIGATION =====
 const initMobileNav = () => {
     const toggle = document.getElementById('mobileMenuToggle');
@@ -386,30 +360,6 @@ const initCardInteractions = () => {
     });
 };
 
-// ===== FAQ ACCORDION (IF PRESENT) =====
-const initFaqAccordion = () => {
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const isActive = question.classList.contains('active');
-            
-            // Close all other FAQ items
-            faqQuestions.forEach(q => {
-                q.classList.remove('active');
-                q.nextElementSibling.style.maxHeight = null;
-            });
-            
-            // Toggle current FAQ item
-            if (!isActive) {
-                question.classList.add('active');
-                const answer = question.nextElementSibling;
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-            }
-        });
-    });
-};
-
 // ===== ACCESSIBILITY: FOCUS VISIBLE =====
 const initAccessibility = () => {
     // Add keyboard focus indicators
@@ -444,7 +394,7 @@ const initLazyLoading = () => {
     }
 };
 
-// ===== TRUST CAROUSEL =====
+// ===== TRUST CAROUSEL - ENHANCED =====
 const initTrustCarousel = () => {
     const carousel = document.getElementById('trustCarousel');
     if (!carousel) return;
@@ -559,7 +509,6 @@ const init = () => {
     // Wait for DOM to be fully loaded
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
-            initAlertBanner();
             initMobileNav();
             initScrollAnimations();
             initFormValidation();
@@ -568,14 +517,12 @@ const init = () => {
             initDateConstraints();
             initActiveNav();
             initCardInteractions();
-            initFaqAccordion();
             initAccessibility();
             initLazyLoading();
             initTrustCarousel();
         });
     } else {
         // DOM is already loaded
-        initAlertBanner();
         initMobileNav();
         initScrollAnimations();
         initFormValidation();
@@ -584,7 +531,6 @@ const init = () => {
         initDateConstraints();
         initActiveNav();
         initCardInteractions();
-        initFaqAccordion();
         initAccessibility();
         initLazyLoading();
         initTrustCarousel();
