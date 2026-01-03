@@ -564,6 +564,7 @@ const init = () => {
             initAccessibility();
             initLazyLoading();
             initTrustCarousel();
+            initServiceCards(); 
         });
     } else {
         // DOM is already loaded
@@ -578,6 +579,7 @@ const init = () => {
         initAccessibility();
         initLazyLoading();
         initTrustCarousel();
+        initServiceCards(); 
     }
 };
 
@@ -599,6 +601,51 @@ const addShakeAnimation = () => {
             }
         `;
         document.head.appendChild(style);
+    }
+};
+
+// ===== SERVICE CARD EXPAND/COLLAPSE =====
+const initServiceCards = () => {
+    const serviceCards = document.querySelectorAll('.service-card-modern');
+
+    serviceCards.forEach(card => {
+        const expandIcon = card.querySelector('.expand-icon');
+        
+        if (expandIcon) {
+            // Click handler
+            expandIcon.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleCard(card);
+            });
+
+            // Keyboard handler
+            expandIcon.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleCard(card);
+                }
+            });
+        }
+    });
+
+    function toggleCard(card) {
+        const isExpanded = card.classList.contains('expanded');
+        
+        // Close all other cards
+        serviceCards.forEach(c => {
+            if (c !== card) {
+                c.classList.remove('expanded');
+            }
+        });
+        
+        // Toggle current card
+        card.classList.toggle('expanded');
+        
+        // Update ARIA
+        const expandIcon = card.querySelector('.expand-icon');
+        if (expandIcon) {
+            expandIcon.setAttribute('aria-expanded', !isExpanded);
+        }
     }
 };
 

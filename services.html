@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- HEADER & NAVIGATION -->
+    <!-- HEADER -->
     <header class="site-header">
         <div class="container">
             <nav class="main-nav">
@@ -45,241 +45,211 @@
     </section>
 
     <!-- SERVICES INTRO -->
-    <section class="section">
+    <section class="section bg-light">
         <div class="container">
-            <div class="content-narrow">
-                <p class="lead-text">
+            <div class="services-intro">
+                <p>
                     NovaCare Clinic offers a full spectrum of medical services designed to meet 
-                    the diverse healthcare needs of our community. Our experienced team of physicians 
-                    and healthcare professionals are dedicated to providing quality care in a 
-                    comfortable, patient-centered environment.
+                    the diverse healthcare needs of our community. Click any service below to learn more.
                 </p>
             </div>
-        </div>
-    </section>
 
-    <!-- PRIMARY CARE -->
-    <section class="section bg-light" id="primary-care">
-        <div class="container">
-            <div class="service-detail">
-                <div class="service-detail-content">
-                    <h2>Primary Care</h2>
-                    <div class="divider-left"></div>
-                    <p>
-                        Our primary care services provide comprehensive, ongoing healthcare for patients 
-                        of all ages. We focus on preventive care, health maintenance, and the management 
-                        of acute and chronic conditions.
+            <!-- SERVICE CARDS GRID -->
+            <div class="services-card-grid">
+                
+                <!-- PRIMARY CARE -->
+                <div class="service-card-modern" data-service="primary-care">
+                    <div class="service-icon-modern">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                        </svg>
+                    </div>
+                    <h3>Primary Care</h3>
+                    <p class="service-card-description">
+                        Comprehensive ongoing healthcare for patients of all ages, focusing on prevention and wellness.
                     </p>
-                    
-                    <h3>Core Services:</h3>
-                    <ul class="service-list">
-                        <li>Annual physical examinations and health screenings</li>
-                        <li>Chronic disease management (diabetes, hypertension, asthma)</li>
-                        <li>Acute illness treatment and urgent care</li>
-                        <li>Immunizations, vaccinations, and preventive care</li>
-                        <li>Specialist referrals and care coordination</li>
-                    </ul>
-
-                    <a href="contact.html#appointment" class="btn btn-primary">Schedule Primary Care Visit</a>
-                </div>
-                <div class="service-detail-image">
-                    <div class="image-placeholder">
-                        <!-- Primary care image placeholder -->
+                    <div class="service-card-actions">
+                        <a href="contact.html#appointment" class="learn-more-btn">Schedule Visit →</a>
+                        <span class="expand-icon" role="button" tabindex="0" aria-label="Expand details">▼</span>
+                    </div>
+                    <div class="service-details">
+                        <div class="service-details-content">
+                            <h4>What We Offer:</h4>
+                            <ul>
+                                <li>Annual physical exams and health screenings</li>
+                                <li>Acute illness treatment</li>
+                                <li>Chronic disease management</li>
+                                <li>Vaccinations and preventive care</li>
+                                <li>Specialist referrals and coordination</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- PEDIATRIC CARE -->
-    <section class="section" id="pediatrics">
-        <div class="container">
-            <div class="service-detail reverse">
-                <div class="service-detail-content">
-                    <h2>Pediatric Care</h2>
-                    <div class="divider-left"></div>
-                    <p>
-                        Our pediatric department provides specialized healthcare for infants, children, 
-                        and adolescents. We understand that children have unique medical needs and 
-                        require a gentle, compassionate approach.
+                <!-- PREVENTIVE CARE -->
+                <div class="service-card-modern" data-service="preventive-care">
+                    <div class="service-icon-modern">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                        </svg>
+                    </div>
+                    <h3>Preventive Care</h3>
+                    <p class="service-card-description">
+                        Proactive health screenings and wellness programs to keep you healthy and prevent disease.
                     </p>
-                    
-                    <h3>Core Services:</h3>
-                    <ul class="service-list">
-                        <li>Well-child visits and developmental screenings</li>
-                        <li>Childhood immunizations and health monitoring</li>
-                        <li>School and sports physical examinations</li>
-                        <li>Treatment of childhood illnesses and infections</li>
-                        <li>Adolescent medicine and nutritional guidance</li>
-                    </ul>
-
-                    <a href="contact.html#appointment" class="btn btn-primary">Schedule Pediatric Visit</a>
-                </div>
-                <div class="service-detail-image">
-                    <div class="image-placeholder">
-                        <!-- Pediatric care image placeholder -->
+                    <div class="service-card-actions">
+                        <a href="contact.html#appointment" class="learn-more-btn">Schedule Visit →</a>
+                        <span class="expand-icon" role="button" tabindex="0" aria-label="Expand details">▼</span>
+                    </div>
+                    <div class="service-details">
+                        <div class="service-details-content">
+                            <h4>Services Include:</h4>
+                            <ul>
+                                <li>Comprehensive wellness exams</li>
+                                <li>Cancer screenings and early detection</li>
+                                <li>Cardiovascular health assessments</li>
+                                <li>Immunization programs</li>
+                                <li>Lifestyle counseling and nutrition guidance</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- WOMEN'S HEALTH -->
-    <section class="section bg-light" id="womens-health">
-        <div class="container">
-            <div class="service-detail">
-                <div class="service-detail-content">
-                    <h2>Women's Health</h2>
-                    <div class="divider-left"></div>
-                    <p>
-                        We provide comprehensive women's healthcare throughout all stages of life, 
-                        from adolescence through menopause and beyond. Our services emphasize 
-                        preventive care and patient education.
+                <!-- WOMEN'S HEALTH -->
+                <div class="service-card-modern" data-service="womens-health">
+                    <div class="service-icon-modern">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/>
+                        </svg>
+                    </div>
+                    <h3>Women's Health</h3>
+                    <p class="service-card-description">
+                        Specialized care for women throughout all life stages, from adolescence through menopause.
                     </p>
-                    
-                    <h3>Core Services:</h3>
-                    <ul class="service-list">
-                        <li>Annual gynecological exams and wellness visits</li>
-                        <li>Pap smears and cervical cancer screening</li>
-                        <li>Breast health evaluations and mammography referrals</li>
-                        <li>Family planning and contraception counseling</li>
-                        <li>Menopause management and hormone therapy</li>
-                    </ul>
-
-                    <a href="contact.html#appointment" class="btn btn-primary">Schedule Women's Health Visit</a>
-                </div>
-                <div class="service-detail-image">
-                    <div class="image-placeholder">
-                        <!-- Women's health image placeholder -->
+                    <div class="service-card-actions">
+                        <a href="contact.html#appointment" class="learn-more-btn">Schedule Visit →</a>
+                        <span class="expand-icon" role="button" tabindex="0" aria-label="Expand details">▼</span>
+                    </div>
+                    <div class="service-details">
+                        <div class="service-details-content">
+                            <h4>Services Include:</h4>
+                            <ul>
+                                <li>Annual gynecological exams</li>
+                                <li>Pap smears and cervical cancer screening</li>
+                                <li>Breast health evaluations</li>
+                                <li>Family planning counseling</li>
+                                <li>Menopause management</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- LABORATORY SERVICES -->
-    <section class="section" id="laboratory">
-        <div class="container">
-            <div class="service-detail reverse">
-                <div class="service-detail-content">
-                    <h2>Laboratory Services</h2>
-                    <div class="divider-left"></div>
-                    <p>
-                        Our on-site laboratory provides comprehensive diagnostic testing with quick 
-                        turnaround times. Having laboratory services in-house allows for efficient 
-                        diagnosis and treatment planning.
+                <!-- PEDIATRIC CARE -->
+                <div class="service-card-modern" data-service="pediatric-care">
+                    <div class="service-icon-modern">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3>Pediatric Care</h3>
+                    <p class="service-card-description">
+                        Gentle, compassionate healthcare for infants, children, and adolescents with specialized expertise.
                     </p>
-                    
-                    <h3>Common Tests:</h3>
-                    <ul class="service-list">
-                        <li>Complete blood count and metabolic panels</li>
-                        <li>Cholesterol and lipid profile testing</li>
-                        <li>Diabetes monitoring (A1C) and thyroid function</li>
-                        <li>Urinalysis and infectious disease screening</li>
-                        <li>Rapid testing (strep, flu, COVID-19)</li>
-                    </ul>
-
-                    <p class="service-note">
-                        <strong>Results:</strong> Most tests processed within 24-48 hours. 
-                        Access your results through our secure patient portal.
-                    </p>
-                </div>
-                <div class="service-detail-image">
-                    <div class="image-placeholder">
-                        <!-- Laboratory image placeholder -->
+                    <div class="service-card-actions">
+                        <a href="contact.html#appointment" class="learn-more-btn">Schedule Visit →</a>
+                        <span class="expand-icon" role="button" tabindex="0" aria-label="Expand details">▼</span>
+                    </div>
+                    <div class="service-details">
+                        <div class="service-details-content">
+                            <h4>Services Include:</h4>
+                            <ul>
+                                <li>Well-child visits and developmental screenings</li>
+                                <li>Childhood immunizations</li>
+                                <li>School and sports physicals</li>
+                                <li>Treatment of childhood illnesses</li>
+                                <li>Adolescent medicine and counseling</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- PHYSICAL THERAPY -->
-    <section class="section bg-light" id="physical-therapy">
-        <div class="container">
-            <div class="service-detail">
-                <div class="service-detail-content">
-                    <h2>Physical Therapy</h2>
-                    <div class="divider-left"></div>
-                    <p>
-                        Our physical therapy department helps patients recover from injuries, 
-                        surgery, and manage chronic pain conditions. We develop individualized 
-                        treatment plans to restore function and improve quality of life.
+                <!-- DIAGNOSTICS & LABS -->
+                <div class="service-card-modern" data-service="diagnostics">
+                    <div class="service-icon-modern">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM10 5.47l4 1.4v11.66l-4-1.4V5.47zm-5 .99l3-1.01v11.7l-3 1.16V6.46zm14 11.08l-3 1.01V6.86l3-1.16v11.84z"/>
+                        </svg>
+                    </div>
+                    <h3>Diagnostics & Labs</h3>
+                    <p class="service-card-description">
+                        On-site laboratory with fast turnaround times for comprehensive diagnostic testing.
                     </p>
-                    
-                    <h3>Treatment Focus:</h3>
-                    <ul class="service-list">
-                        <li>Post-surgical rehabilitation and recovery</li>
-                        <li>Sports injury treatment and prevention</li>
-                        <li>Orthopedic conditions and joint replacement rehab</li>
-                        <li>Back and neck pain management</li>
-                        <li>Balance training and fall prevention programs</li>
-                    </ul>
-
-                    <a href="contact.html#appointment" class="btn btn-primary">Schedule PT Evaluation</a>
-                </div>
-                <div class="service-detail-image">
-                    <div class="image-placeholder">
-                        <!-- Physical therapy image placeholder -->
+                    <div class="service-card-actions">
+                        <a href="contact.html#appointment" class="learn-more-btn">Schedule Visit →</a>
+                        <span class="expand-icon" role="button" tabindex="0" aria-label="Expand details">▼</span>
+                    </div>
+                    <div class="service-details">
+                        <div class="service-details-content">
+                            <h4>Testing Available:</h4>
+                            <ul>
+                                <li>Blood work and metabolic panels</li>
+                                <li>Cholesterol and lipid profiles</li>
+                                <li>Diabetes monitoring (A1C)</li>
+                                <li>Rapid testing (strep, flu, COVID-19)</li>
+                                <li>Urinalysis and infectious disease screening</li>
+                            </ul>
+                            <p class="service-note">
+                                <strong>Results:</strong> Most tests processed within 24-48 hours
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- URGENT CARE -->
-    <section class="section" id="urgent-care">
-        <div class="container">
-            <div class="service-detail reverse">
-                <div class="service-detail-content">
-                    <h2>Urgent Care</h2>
-                    <div class="divider-left"></div>
-                    <p>
-                        For non-life-threatening illnesses and injuries that require prompt attention, 
-                        our urgent care services provide convenient walk-in care with extended hours. 
-                        No appointment necessary.
+                <!-- CHRONIC CONDITION MANAGEMENT -->
+                <div class="service-card-modern" data-service="chronic-care">
+                    <div class="service-icon-modern">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </div>
+                    <h3>Chronic Condition Management</h3>
+                    <p class="service-card-description">
+                        Ongoing care and support for managing long-term health conditions with personalized treatment plans.
                     </p>
-                    
-                    <h3>We Treat:</h3>
-                    <ul class="service-list">
-                        <li>Minor injuries (cuts, burns, sprains, fractures)</li>
-                        <li>Fever, flu symptoms, and respiratory infections</li>
-                        <li>Allergic reactions and skin conditions</li>
-                        <li>Urinary tract infections</li>
-                        <li>Other non-emergency medical concerns</li>
-                    </ul>
+                    <div class="service-card-actions">
+                        <a href="contact.html#appointment" class="learn-more-btn">Schedule Visit →</a>
+                        <span class="expand-icon" role="button" tabindex="0" aria-label="Expand details">▼</span>
+                    </div>
+                    <div class="service-details">
+                        <div class="service-details-content">
+                            <h4>Conditions We Manage:</h4>
+                            <ul>
+                                <li>Diabetes (Type 1 and Type 2)</li>
+                                <li>Hypertension and heart disease</li>
+                                <li>Asthma and COPD</li>
+                                <li>Arthritis and chronic pain</li>
+                                <li>Thyroid disorders</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="info-box">
-                        <h4>Urgent Care Hours</h4>
-                        <p>
-                            <strong>Monday - Friday:</strong> 8:00 AM - 8:00 PM<br>
-                            <strong>Saturday - Sunday:</strong> 9:00 AM - 5:00 PM
-                        </p>
-                        <p class="service-note">
-                            For life-threatening emergencies, call 911 or go to the nearest emergency room.
-                        </p>
-                    </div>
-                </div>
-                <div class="service-detail-image">
-                    <div class="image-placeholder">
-                        <!-- Urgent care image placeholder -->
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- CTA SECTION -->
-    <section class="section cta-section">
+    <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Need Medical Care?</h2>
+                <h2>Ready to Get Started?</h2>
                 <p>
-                    Our team is ready to provide the healthcare services you need. 
-                    Schedule an appointment or walk in for urgent care.
+                    Schedule an appointment today and experience quality healthcare 
+                    from a team that truly cares about your wellbeing.
                 </p>
                 <div class="cta-actions">
-                    <a href="contact.html#appointment" class="btn btn-primary btn-large">Schedule Appointment</a>
-                    <a href="tel:+15125551234" class="btn btn-outline btn-large">Call (512) 555-1234</a>
+                    <a href="contact.html#appointment" class="btn btn-primary">Schedule Appointment</a>
+                    <a href="tel:+15125551234" class="btn btn-outline">Call (512) 555-1234</a>
                 </div>
             </div>
         </div>
@@ -316,11 +286,11 @@
                 <div class="footer-section">
                     <h4>Services</h4>
                     <ul class="footer-links">
-                        <li><a href="services.html#primary-care">Primary Care</a></li>
-                        <li><a href="services.html#pediatrics">Pediatric Care</a></li>
-                        <li><a href="services.html#womens-health">Women's Health</a></li>
-                        <li><a href="services.html#laboratory">Laboratory</a></li>
-                        <li><a href="services.html#physical-therapy">Physical Therapy</a></li>
+                        <li><a href="#primary-care">Primary Care</a></li>
+                        <li><a href="#preventive-care">Preventive Care</a></li>
+                        <li><a href="#womens-health">Women's Health</a></li>
+                        <li><a href="#pediatric-care">Pediatric Care</a></li>
+                        <li><a href="#diagnostics">Diagnostics & Labs</a></li>
                     </ul>
                 </div>
 
