@@ -388,6 +388,7 @@ p { margin-bottom: var(--spacing-sm); }
     box-shadow: 0 6px 20px rgba(139, 38, 53, 0.15);
 }
 
+/* Hero Image - FIXED */
 .hero-image-placeholder {
     position: absolute;
     right: 0;
@@ -397,6 +398,15 @@ p { margin-bottom: var(--spacing-sm); }
     background: linear-gradient(135deg, #E8E8E8 0%, #D0D0D0 100%);
     z-index: 1;
     border-radius: 0 0 0 8px;
+    overflow: hidden;
+}
+
+.hero-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 /* ===== PAGE HEADER ===== */
@@ -627,7 +637,7 @@ p { margin-bottom: var(--spacing-sm); }
     margin: 0 auto;
     position: relative;
     padding: var(--spacing-lg) 0;
-    overflow: hidden; /* Critical: hides off-screen slides */
+    overflow: hidden;
     width: 100%;
 }
 
@@ -636,14 +646,13 @@ p { margin-bottom: var(--spacing-sm); }
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
     width: 100%;
-    /* NO GAP - this breaks the width calculation */
 }
 
 .carousel-slide {
-    flex: 0 0 100%; /* Critical: flex-basis 100%, no grow, no shrink */
-    width: 100%; /* Backup for older browsers */
-    max-width: 100%; /* Prevent overflow */
-    box-sizing: border-box; /* Include padding in width calculation */
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     background: var(--color-white);
     padding: var(--spacing-lg);
     border-radius: 8px;
@@ -652,6 +661,7 @@ p { margin-bottom: var(--spacing-sm); }
     text-align: center;
 }
 
+/* Carousel Images - FIXED */
 .carousel-image-placeholder {
     width: 100%;
     height: 280px;
@@ -663,6 +673,15 @@ p { margin-bottom: var(--spacing-sm); }
     color: var(--color-text-light);
     font-size: 1rem;
     margin-bottom: var(--spacing-md);
+    overflow: hidden;
+}
+
+.carousel-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 .trust-content h3 {
@@ -676,7 +695,7 @@ p { margin-bottom: var(--spacing-sm); }
     font-size: 1.05rem;
     line-height: 1.7;
     color: var(--color-text);
-    margin: 0; /* Remove default margin */
+    margin: 0;
 }
 
 /* Carousel Navigation Buttons */
@@ -743,7 +762,7 @@ p { margin-bottom: var(--spacing-sm); }
     cursor: pointer;
     transition: all 0.3s ease;
     padding: 0;
-    flex-shrink: 0; /* Prevent indicator shrinking */
+    flex-shrink: 0;
 }
 
 .indicator:hover {
@@ -761,7 +780,7 @@ p { margin-bottom: var(--spacing-sm); }
     outline-offset: 2px;
 }
 
-/* Mobile Responsiveness */
+/* Mobile Responsiveness for Carousel */
 @media (max-width: 968px) {
     .carousel-prev {
         left: 0;
@@ -813,140 +832,66 @@ p { margin-bottom: var(--spacing-sm); }
         font-size: 1.3rem;
         opacity: 0.9;
     }
+    
+    .carousel-image-placeholder {
+        height: 200px;
+    }
 }
 
-/* Carousel Navigation Buttons */
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.95);
+@media (max-width: 480px) {
+    .carousel-image-placeholder {
+        height: 180px;
+    }
+}
+
+/* ===== SERVICES OVERVIEW (HOMEPAGE) ===== */
+.services-overview {
+    background-color: var(--color-primary);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+}
+
+.service-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
     border: 1px solid var(--color-border);
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    font-size: 1.8rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: var(--transition);
-    z-index: 10;
-    color: var(--color-secondary);
-    box-shadow: var(--shadow-sm);
 }
 
-.carousel-btn:hover {
-    background: var(--color-white);
-    border-color: var(--color-accent);
+.service-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.service-card p {
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.link-arrow {
     color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.link-arrow:hover {
+    color: var(--color-accent-hover);
+}
+
+.link-arrow::after {
+    content: ' →';
+}
+
+.card-interactive:hover {
+    transform: translateY(-4px);
     box-shadow: var(--shadow-md);
-}
-
-.carousel-btn:active {
-    transform: translateY(-50%) scale(0.95);
-}
-
-.carousel-btn:focus-visible {
-    outline: 3px solid var(--color-accent);
-    outline-offset: 2px;
-}
-
-.carousel-prev {
-    left: -60px;
-}
-
-.carousel-next {
-    right: -60px;
-}
-
-/* Carousel Indicators */
-.carousel-indicators {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-top: var(--spacing-md);
-    padding: var(--spacing-sm) 0;
-}
-
-.indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--color-border);
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 0;
-}
-
-.indicator:hover {
-    background: var(--color-text-light);
-}
-
-.indicator[aria-selected="true"] {
-    background: var(--color-accent);
-    width: 32px;
-    border-radius: 6px;
-}
-
-.indicator:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 2px;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 968px) {
-    .carousel-prev {
-        left: 0;
-    }
-
-    .carousel-next {
-        right: 0;
-    }
-
-    .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
-    }
-
-    .carousel-image-placeholder {
-        height: 220px;
-    }
-}
-
-@media (max-width: 768px) {
-    .trust-carousel {
-        padding: var(--spacing-md) 0;
-    }
-
-    .carousel-slide {
-        padding: var(--spacing-md);
-    }
-
-    .trust-content h3 {
-        font-size: 1.3rem;
-    }
-
-    .trust-content p {
-        font-size: 1rem;
-    }
-
-    .carousel-prev {
-        left: -12px;
-    }
-
-    .carousel-next {
-        right: -12px;
-    }
-
-    .carousel-btn {
-        width: 36px;
-        height: 36px;
-        font-size: 1.3rem;
-        opacity: 0.9;
-    }
 }
 
 /* ===== PATIENT RESOURCES - 2×2 GRID ===== */
@@ -1478,7 +1423,7 @@ p { margin-bottom: var(--spacing-sm); }
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--color-secondary);
-    margin-top: calc(var(--spacing-lg) * 1.5); /* More breathing room */
+    margin-top: calc(var(--spacing-lg) * 1.5);
     margin-bottom: var(--spacing-md);
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -1489,26 +1434,26 @@ p { margin-bottom: var(--spacing-sm); }
 .service-list {
     list-style: none;
     padding: 0;
-    margin: var(--spacing-lg) 0; /* Increased spacing */
+    margin: var(--spacing-lg) 0;
     display: grid;
-    gap: var(--spacing-md); /* More space between items */
+    gap: var(--spacing-md);
 }
 
 .service-list li {
-    padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 40px; /* More padding */
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 40px;
     position: relative;
     color: var(--color-text);
-    background-color: transparent; /* Remove background for cleaner look */
+    background-color: transparent;
     border-radius: 0;
-    line-height: 1.7; /* Better readability */
+    line-height: 1.7;
     font-size: 1rem;
-    border-left: 3px solid var(--color-accent); /* Add accent border */
+    border-left: 3px solid var(--color-accent);
     transition: var(--transition);
 }
 
 .service-list li:hover {
     border-left-color: var(--color-accent-hover);
-    padding-left: 44px; /* Subtle shift on hover */
+    padding-left: 44px;
 }
 
 .service-list li::before {
@@ -1571,30 +1516,7 @@ p { margin-bottom: var(--spacing-sm); }
 
 /* Button Spacing */
 .service-detail-content .btn {
-    margin-top: calc(var(--spacing-lg) * 1.5); /* More space before CTA */
-}
-
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .service-detail-content h3 {
-        margin-top: var(--spacing-lg);
-        font-size: 0.9rem;
-    }
-    
-    .service-list {
-        gap: var(--spacing-sm);
-        margin: var(--spacing-md) 0;
-    }
-    
-    .service-list li {
-        padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) 36px;
-        font-size: 0.95rem;
-    }
-    
-    .service-list li::before {
-        left: 12px;
-        top: var(--spacing-sm);
-    }
+    margin-top: calc(var(--spacing-lg) * 1.5);
 }
 
 /* Pricing Page */
@@ -1947,24 +1869,6 @@ p { margin-bottom: var(--spacing-sm); }
     .map-section {
         grid-template-columns: 1fr;
     }
-    
-    .carousel-prev { 
-        left: 0; 
-    }
-    
-    .carousel-next { 
-        right: 0; 
-    }
-    
-    .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
-    }
-    
-    .carousel-image-placeholder {
-        height: 220px;
-    }
 }
 
 /* Mobile */
@@ -2077,37 +1981,6 @@ p { margin-bottom: var(--spacing-sm); }
         grid-template-columns: 1fr;
     }
     
-    .trust-carousel {
-        padding: var(--spacing-md) 0;
-    }
-    
-    .carousel-slide {
-        padding: var(--spacing-md);
-    }
-    
-    .trust-content h3 {
-        font-size: 1.3rem;
-    }
-    
-    .trust-content p {
-        font-size: 1rem;
-    }
-    
-    .carousel-prev { 
-        left: -12px; 
-    }
-    
-    .carousel-next { 
-        right: -12px; 
-    }
-    
-    .carousel-btn {
-        width: 36px;
-        height: 36px;
-        font-size: 1.3rem;
-        opacity: 0.9;
-    }
-    
     .mission-section h2 {
         font-size: 2rem;
     }
@@ -2128,6 +2001,11 @@ p { margin-bottom: var(--spacing-sm); }
     .service-list li {
         padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) 28px;
         font-size: 0.95rem;
+    }
+    
+    .service-list li::before {
+        left: 12px;
+        top: var(--spacing-sm);
     }
     
     .image-placeholder {
